@@ -12,6 +12,7 @@ services:
     db:
         ports:
             - "3306:3306"
+            - "3307:3306"
         restart: "no"
         #volumes:
             # Comment out if DB should be created from scratch
@@ -25,6 +26,7 @@ services:
             cache_from:
                 -   openmrs/openmrs-core:${TAG:-dev}
         ports:
+            - "80:8080"
             - "8080:8080"
             - "8000:8000"
             - "9000:9000"
@@ -42,4 +44,5 @@ services:
         volumes:
             - ./:/openmrs_core
             - ./target/data:/openmrs/data/
+            - ../openmrs-module-legacyui/omod/target/legacyui-3.0.0-SNAPSHOT.omod:/openmrs/distribution/openmrs_modules/legacyui-3.0.0-SNAPSHOT.omod:ro
         restart: "no"
