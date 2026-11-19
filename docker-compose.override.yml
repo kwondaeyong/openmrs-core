@@ -45,4 +45,5 @@ services:
             - ./:/openmrs_core
             - ./target/data:/openmrs/data/
             - ../openmrs-module-legacyui/omod/target/legacyui-3.0.0-SNAPSHOT.omod:/openmrs/distribution/openmrs_modules/legacyui-3.0.0-SNAPSHOT.omod:ro
+            - ../openmrs-module-webservices.rest/omod/target/webservices.rest-4.0.0-SNAPSHOT.omod:/openmrs/distribution/openmrs_modules/webservices.rest-4.0.0-SNAPSHOT.omod:ro
         restart: "no"
